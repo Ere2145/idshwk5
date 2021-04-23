@@ -60,14 +60,14 @@ def predict(test_file, result_file):
                 f_result.write(line + ',dga\n')
 
 def main():
-    init_data('train.txt')
+    init('train.txt')
     featureMatrix = []
     labelList = []
     for i in domainList:
         featureMatrix.append(i.return_data())
         labelList.append(i.return_label())
     clf.fit(featureMatrix, labelList)
-    predict_data('test.txt', 'result.txt')
+    predict('test.txt', 'result.txt')
 
 if __name__ == '__main__':
     main()
